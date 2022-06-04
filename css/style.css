@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Montserrat:wght@100&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro&display=swap');
 *{
     margin: 0;                /*마진값 초기화*/
     padding: 0;               /*패딩값 초기화*/
@@ -21,7 +22,7 @@ ul {
 header {
     width: 100%;        /*너비*/
     height: 100px;       /*높이*/
-    background-color: #07c;
+    background-color: #004;
 }
 
 /*로고 영역*/
@@ -60,21 +61,19 @@ nav {
     display: block;            /*링크 텍스트 블록 형태로 지정*/
     color: #fff;             /*폰트 색상*/
     font-weight: 600;          /*폰트 굵기*/
-    text-shadow: 0 1px #07c; /*그림자 추가*/
+    text-shadow: 0 1px #222; /*그림자 추가*/
     padding: 20px 100px;        /*패딩 지정*/
 }
 #topMenu > li > a > span {
     font-size: 0.5em;
 }
 #topMenu > li > a:hover {
-    color: #000;              /*마우스를 올리면 색상 바뀜*/
-    text-shadow: 0 -1px #07c; /*글자가 굵어지지 않도록 지정*/
+    text-shadow: 0 -1px #222; /*글자가 굵어지지 않도록 지정*/
 }
 #topMenu > li > ul {
     display: none;           /*서브메뉴 처음에는 감춤*/
     position: absolute;      /*서브메뉴가 topMenu와 어울리기 위함*/
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6); /*배경 투명색*/
     left: 20px;
     margin: 0;
 }
@@ -85,277 +84,89 @@ nav {
 #topMenu > li > ul > li > a {
     font-size: 14px;
     padding: 10px;
-    color: #000;
+    color: #fff;
 }
 #topMenu > li:hover > ul {
     display: block;    /*메인 메뉴 항목 위로 오버하면 서브메뉴 표시*/
     z-index: 10;       /*슬라이드 쇼에 가리지 않게 조절*/
 }
-#topMenu > li > ul > li > a:hover {
-    color: #fff;
+#topMenu > li > ul > li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-
-/*이미지 슬라이드 쇼 영역*/
-.slide_wrapper {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    height: 500px;
-    overflow: hidden;
-}
-.slides {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: left 0.5s ease-out;
-}
-.slides li:not(:last-child) {
-    float: left;
-    margin-right: 30px;
-}
-
-.controls {
-    position: absolute;
-    float: center;
-    margin-top: 30px;
-}
-
-.prev {
-    background-color: #222;
-    opacity: 0.6;
-    float: left;
-    
-    z-index: 999999;
-    height: 5em;
-    width: 5em;
-    border-radius: 50%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-transition: all .3s ease-in;
-    transition: all .3s ease-in;
-}
-.next {
-    background-color: #222;
-    opacity: 0.6;
-    float: right;
-    right: 0;
-    z-index: 999999;
-    height: 5em;
-    width: 5em;
-    border-radius: 50%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-transition: all .3s ease-in;
-    transition: all .3s ease-in;
-}
-
-.prev:hover {
-    background-image: url("images/left-arrow.jpg");
-    display: block;
-}
-.next:hover {
-    background-image: url("images/right-arrow.jpg");
-    display: block;
-}
 
 
 /*콘텐츠 영역*/
-#contents {
-    width: 100%;
-    height: 1000px;
-}
 
-/*탭 메뉴 영역*/
-#tabMenu {
-     /*왼쪽으로 플로팅*/
-    width: 100%;
-    height: 650px;
-}
+/*첫번째 사진*/          
+.fixed01{
+    width: 100%; height: 600px;
 
-.wrapper{
-    width: 90%;
-    margin: 0 auto;
-    max-width: 80rem;
-  }
-  
-  .cols{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  
-  .col{
-    width: calc(25% - 2rem);
-    margin: 1rem;
-    cursor: pointer;
-  }
-  
-  .container{
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
-            perspective: 1000px;
-  }
-  
-  .front,
-  .back{
-    background-size: cover;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
-    border-radius: 10px;
-    background-position: center;
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    text-align: center;
-    min-height: 280px;
-    height: auto;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .back{
-    background: #cedce7;
-    background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-    background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-    background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  }
-  
-  .front:after{
-    position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      content: '';
-      display: block;
-      opacity: .6;
-      background-color: #000;
-      -webkit-backface-visibility: hidden;
-              backface-visibility: hidden;
-      border-radius: 10px;
-  }
-  .container:hover .front,
-  .container:hover .back{
-      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  }
-  
-  .back{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-  }
-  
-  .inner{
-      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-              transform: translateY(-50%) translateZ(60px) scale(0.94);
-      top: 50%;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      padding: 2rem;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      outline: 1px solid transparent;
-      -webkit-perspective: inherit;
-              perspective: inherit;
-      z-index: 2;
-  }
-  
-  .container .back{
-      -webkit-transform: rotateY(180deg);
-              transform: rotateY(180deg);
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-  }
-  
-  .container .front{
-      -webkit-transform: rotateY(0deg);
-              transform: rotateY(0deg);
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-  }
-  
-  .container:hover .back{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-  }
-  
-  .container:hover .front{
-    -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-  }
-  
-  .front .inner p{
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
+    background-image: url(../images/photo-1.jpg);
+    background-repeat: no-repeat; /* 배경이미지X */
+    background-size: cover; /* 요소를 비율에 맞게 커버 */
+    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
+    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
     position: relative;
-  }
-  
-  .front .inner p:after{
-    content: '';
-    width: 4rem;
-    height: 2px;
+}
+.maincomment {
     position: absolute;
-    background: #C6D4DF;
-    display: block;
+    width: auto;
+    height: auto;
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    bottom: -.75rem;
-  }
-  
-  .front .inner span{
-    color: rgba(255,255,255,0.7);
-    font-family: 'Montserrat';
-    font-weight: 300;
-  }
-  
-  @media screen and (max-width: 64rem){
-    .col{
-      width: calc(33.333333% - 2rem);
-    }
-  }
-  
-  @media screen and (max-width: 48rem){
-    .col{
-      width: calc(50% - 2rem);
-    }
-  }
-  
-  @media screen and (max-width: 32rem){
-    .col{
-      width: 100%;
-      margin: 0 0 2rem 0;
-    }
-  }
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 0 -1px 0 #222;
+    color: #fff;
+    top: 250px;
+    left: 100px;
+}
 
-/*퀵 링크 영역*/
-#links {
-            /*탭 메뉴 옆 오른쪽으로 플로탕*/
-    width: 100%;        /*너비*/
-    height: 350px;        /*높이*/
-    background-color: skyblue;
+/*첫번째 콘텐츠*/
+.contents01 {
+    width: 100%;
+    height: 700px; 
+    background-color: orange; 
+    position: relative;
+}
+.photo {
+    position: absolute;
+    float: left;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin: 150px 50px;
+}
+.exp {
+    position: absolute;
+    right: 0;
+    width: 400px;
+    height: auto;
+    margin: 150px 150px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.exp b { font-size: 30px; }
+
+/*두번째 사진*/
+.fixed02{
+    width: 100%; height: 450px;
+    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
+    background-image: url(../images/photo-2.jpg);
+    background-repeat: no-repeat; /* 배경이미지X */
+    background-size: cover; /* 요소를 비율에 맞게 커버 */
+    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
+    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
+}
+
+/*두번째 콘텐츠*/
+.contents02 {
+    width: 100%;
+    height: 600px; 
+    background-color: orange; 
+    position: relative;
 }
 
 /*푸터 영역*/
