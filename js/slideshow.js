@@ -1,10 +1,13 @@
-const saTriggerMargin = 200;
+const TriggerMargin = 200;
 const phoElementList = document.querySelectorAll('.photo');
 
 const phoFunc = function() {
-  for (const element of phoElementList) {
-    if (!element.classList.contains('show')) {
-      if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+  for (const element of phoElementList) 
+  {
+    if (!element.classList.contains('show')) 
+    {
+      if (window.innerHeight > element.getBoundingClientRect().top + TriggerMargin) 
+      {
         element.classList.add('show');
       }
     }
@@ -16,10 +19,14 @@ window.addEventListener('scroll', phoFunc);
 
 const exElementList = document.querySelectorAll('.exp');
 
-const exFunc = function() {
-  for (const element of exElementList) {
-    if (!element.classList.contains('show')) {
-      if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+const exFunc = function() 
+{
+  for (const element of exElementList) 
+  {
+    if (!element.classList.contains('show')) 
+    {
+      if (window.innerHeight > element.getBoundingClientRect().top + TriggerMargin) 
+      {
         element.classList.add('show');
       }
     }
