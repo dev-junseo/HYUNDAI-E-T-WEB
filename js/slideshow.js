@@ -1,33 +1,30 @@
-const slides = document.querySelector(".slides");
-const slide = document.querySelectorAll(".slides li");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-let currentIdx = 0;
-let slideCount = slide.length;
-let slideWidth = 1200
-let slideMargin = 30
-slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+const saTriggerMargin = 200;
+const phoElementList = document.querySelectorAll('.photo');
 
-function moveSlide(num) {
-    slides.style.left = -num * (1200 + 30) + 'px';
-    currentIdx = num;
+const phoFunc = function() {
+  for (const element of phoElementList) {
+    if (!element.classList.contains('show')) {
+      if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+        element.classList.add('show');
+      }
+    }
+  }
 }
 
-nextBtn.addEventListener('click', function(){
-    if(currentIdx < slideCount - 1)
-    {
-        moveSlide(currentIdx + 1);
+window.addEventListener('load', phoFunc);
+window.addEventListener('scroll', phoFunc);
+
+const exElementList = document.querySelectorAll('.exp');
+
+const exFunc = function() {
+  for (const element of exElementList) {
+    if (!element.classList.contains('show')) {
+      if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+        element.classList.add('show');
+      }
     }
-    else{
-        moveSlide(0);
-    }
-});
-prevBtn.addEventListener('click', function(){
-    if(currentIdx > 0)
-    {
-        moveSlide(currentIdx - 1);
-    }
-    else{
-        moveSlide(slideCount - 1);
-    }
-});
+  }
+}
+
+window.addEventListener('load', exFunc);
+window.addEventListener('scroll', exFunc);
