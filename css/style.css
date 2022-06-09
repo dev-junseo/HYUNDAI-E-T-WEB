@@ -164,6 +164,54 @@ nav {
 }
 .exp b { font-size: 30px; }
 
+.contents01-1 {
+    width: 100%;
+    height: 600px;
+    background-color: #004;
+    position: relative;
+    font-family: 'Gothic A1', sans-serif;
+}
+.contect {
+    position: absolute;
+    margin: 90px 100px;
+    color: #fff;
+}
+.head {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 50px;
+    transform: translate(0, -100px);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.head.show {
+    opacity: 1;
+    transform: none;
+}
+.body {
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: all .5s ease;
+    font-weight: 500;
+}
+.body.show {
+    opacity: 1;
+    transform: none;
+}
+.phonenum {
+    background-color: rgb(38, 48, 67);
+    margin: 60px 300px;
+    text-align: center;
+}
+.phonenum:hover {
+    background-color: #3C467D;
+    cursor: pointer;
+}
+
+
 /*두번째 사진*/
 .fixed02{
     width: 100%; height: 450px;
@@ -174,11 +222,7 @@ nav {
     background-position: center; /* 이미지를 요소의 정가운데로 처리 */
     background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
 }
-.contents01-1 {
-    width: 100%;
-    height: 600px;
-    background-color: #004;
-}
+
 
 /*두번째 콘텐츠*/
 .contents02 {
