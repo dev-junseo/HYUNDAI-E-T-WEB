@@ -20,7 +20,7 @@ ul {
 
 /*헤더 영역*/
 header {
-    width: 1200px;        /*너비*/
+    width: 100%;        /*너비*/
     height: 100px;       /*높이*/
     background-color: #004;
 }
@@ -28,7 +28,7 @@ header {
 /*로고 영역*/
 #logo {
     float: left;        /*왼쪽으로 플로팅*/
-    width: 300px;       /*너비*/
+    width: 25%;       /*너비*/
     height: 100px;      /*높이*/
 
     /*로고가 중간에 오도록*/
@@ -38,7 +38,7 @@ header {
 #logo h1 {
     font-family: 'Gothic A1', sans-serif;
     font-weight: 700;
-    font-size: 40px;                 /*폰트 크기*/
+    font-size: 25px;                 /*폰트 크기*/
     color: white;                   /*폰트 색상*/
     text-shadow: 0 -1px 0 #222;    /*그림자색*/
 }
@@ -121,7 +121,7 @@ nav {
     text-shadow: 0 -1px 0 #222;
     color: #fff;
     top: 250px;
-    left: 100px;
+    left: 10%;
 }
 
 /*첫번째 콘텐츠*/
@@ -134,15 +134,17 @@ nav {
 .photo {
     position: absolute;
     float: left;
-    width: 400px;
+    width: 50%;
     height: 400px;
+    margin: 100px 12.5%;
+    background-image: url("images/contents01.jpg");
     overflow: hidden;
-    margin: 100px 50px;
     transform: translate(-100px, 0);
     opacity: 0;
     transition: all .5s ease;
 }
 .photo.show {
+    width: 50%;
     opacity: 1;
     transform: none;
 }
@@ -315,7 +317,14 @@ footer {
     line-height: 20px;
 }
 
+@media (min-width: 576px){
+
+}
+
 @media (min-width: 768px){
 
-} background-color: gray;
+}
+
+@media (min-width: 1200px){
+
 }
