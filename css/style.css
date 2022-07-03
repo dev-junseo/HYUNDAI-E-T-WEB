@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Montserrat:wght@100&family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 *{
     margin: 0;                /*마진값 초기화*/
     padding: 0;               /*패딩값 초기화*/
@@ -15,7 +16,7 @@ ul {
 
 #container {
     margin: 0 auto;      /*화면 중앙에 배치*/
-    width: 1200px;       /*너비 지정*/
+    width: 100%;       /*너비 지정*/
 }
 
 /*헤더 영역*/
@@ -32,7 +33,7 @@ header {
     height: 100px;      /*높이*/
 }
 #logo > a > img {
-    width: 40%;
+    width: 120px;
     height: 90%;
     display: block;
     margin: 5px auto;
@@ -42,7 +43,7 @@ header {
 /*내비게이션 영역*/
 nav {
     float: right;      /*로고 옆 오른쪽으로 플로팅*/
-    width: 900px;      /*너비*/
+    width: 75%;      /*너비*/
     height: 100px;     /*내비게이션 영역 높이*/
     padding-top: 40px; /*메뉴를 아래로 내리기 위해*/
 }
@@ -50,7 +51,7 @@ nav {
     height: 60px;
 }
 #topMenu > li {
-    float: left;        /*메뉴 항목을 왼쪽으로 플로팅*/
+    float: right;        /*메뉴 항목을 왼쪽으로 플로팅*/
     position: relative; /*서브메뉴를 absolute 하기위함*/
 }
 #topMenu > li > a {
@@ -72,6 +73,7 @@ nav {
     width: 100%;
     left: 20px;
     margin: 0;
+    background-color: rgba(0, 0, 68, 0.6);
 }
 #topMenu > li > ul > li {
     padding: 10px 10px 10px 30px;   /*서브메뉴 항목 크기 지정*/
@@ -87,7 +89,7 @@ nav {
     z-index: 10;       /*슬라이드 쇼에 가리지 않게 조절*/
 }
 #topMenu > li > ul > li:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #004;
 }
 
 
@@ -96,7 +98,7 @@ nav {
 
 /*첫번째 사진*/          
 .fixed01{
-    width: 100%; height: 600px;
+    width: 100%; height: 850px;
 
     /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
     background-image: url(../images/photo-1.jpg);
@@ -106,22 +108,131 @@ nav {
     background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
     position: relative;
 }
+
+.sideslide {
+    position: absolute;
+    float: left;
+    width: 35%;
+    height: 100%;
+    background-color: rgba(64, 83, 252, 0.3);;
+}
 .maincomment {
     position: absolute;
-    width: auto;
-    height: auto;
-    left: 0;
-    font-family: 'Gothic A1', sans-serif;
+    right: 0;
+    display: block;
+    margin: 400px auto;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 40px;
-    font-weight: 700;
     text-shadow: 0 -1px 0 #222;
     color: #fff;
-    top: 250px;
-    left: 10%;
+    transform: translate(-100px, 0);
+    opacity: 0;
+    transition: all .8s ease;
+}
+.maincomment.show {
+    opacity: 1;
+    transform: none;
 }
 
 /*첫번째 콘텐츠*/
 .contents01 {
+    width: 100%;
+    height: 600px; 
+    background-color: rgb(252, 252, 252); 
+    position: relative;
+}
+.practicez {
+    position: absolute;
+    float: left;
+    width: 35%;
+    height: 100%;
+    background-color: rgba(248, 185, 48, 0.5);;
+}
+.practice {
+    position: absolute;
+    right: 0;
+    display: block;
+    margin: 160px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    transform: translate(-100px, 0);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.practice.show {
+    opacity: 1;
+    transform: none;
+}
+
+.explane {
+    position: absolute;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-color: rgb(252, 252, 252); 
+}
+.exp {
+    position: absolute;
+    float: right;
+    height: 100%;
+    transform: translate(100px, 0);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.exp.show {
+    opacity: 1;
+    transform: none;
+    width: 100%;
+}
+.depart {
+    float: left;
+    width: 30%;
+    margin: 80px 10px auto 30px;
+}
+.sup {
+    float: left;
+    width: 30%;
+    margin: 80px 10px auto 10px;
+}
+.cun {
+    float: left;
+    width: 30%;
+    margin: 80px 10px auto 10px;
+}
+.block {
+    color: #0066cc;
+}
+.exp > div > p > a {
+    color: black;
+}
+.exp > div > p > a:hover {
+    color: black;
+}
+
+.contents01-1 {
+    width: 100%;
+    height: 600px;
+    background-color: #004;
+    position: relative;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+
+/*두번째 사진*/
+.fixed02{
+    width: 100%; height: 450px;
+    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
+    background-image: url(../images/photo-2.jpg);
+    background-repeat: no-repeat; /* 배경이미지X */
+    background-size: cover; /* 요소를 비율에 맞게 커버 */
+    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
+    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
+}
+
+
+/*두번째 콘텐츠*/
+.contents02 {
     width: 100%;
     height: 600px; 
     background-color: orange; 
@@ -130,43 +241,30 @@ nav {
 .photo {
     position: absolute;
     float: left;
-    width: 600px;
-    height: 400px;
-    margin: 100px;
-    overflow: hidden;
-    transform: translate(-100px, 0);
-    opacity: 0;
-    transition: all .5s ease;
-}
-.photo.show {
-    width: 500px;
-    opacity: 1;
-    transform: none;
-}
-.exp {
-    position: absolute;
-    right: 0;
     width: 400px;
-    height: auto;
-    margin: 100px 100px;
-    font-size: 20px;
-    line-height: 30px;
-    transform: translate(100px, 0);
-    opacity: 0;
-    transition: all .5s ease;
+    height: 400px;
+    overflow: hidden;
+    margin: 100px 50px;
 }
-.exp.show {
-    opacity: 1;
-    transform: none;
-}
-.exp b { font-size: 30px; }
 
-.contents01-1 {
+
+/*세번째 사진*/
+.fixed03{
+    width: 100%; height: 450px;
+    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
+    background-image: url(../images/photo-3.jpg);
+    background-repeat: no-repeat; /* 배경이미지X */
+    background-size: cover; /* 요소를 비율에 맞게 커버 */
+    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
+    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
+}
+
+/*세번째 콘텐츠*/
+.contents03 {
     width: 100%;
-    height: 600px;
-    background-color: #004;
+    height: 600px; 
+    background-color: orange; 
     position: relative;
-    font-family: 'Gothic A1', sans-serif;
 }
 .contect {
     position: absolute;
@@ -206,64 +304,6 @@ nav {
 .phonenum:hover {
     background-color: #3C467D;
     cursor: pointer;
-}
-
-
-/*두번째 사진*/
-.fixed02{
-    width: 100%; height: 450px;
-    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-    background-image: url(../images/photo-2.jpg);
-    background-repeat: no-repeat; /* 배경이미지X */
-    background-size: cover; /* 요소를 비율에 맞게 커버 */
-    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
-    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
-}
-
-
-/*두번째 콘텐츠*/
-.contents02 {
-    width: 100%;
-    height: 600px; 
-    background-color: orange; 
-    position: relative;
-}
-.photo {
-    position: absolute;
-    float: left;
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-    margin: 100px 50px;
-}
-.exp {
-    position: absolute;
-    right: 0;
-    width: 400px;
-    height: auto;
-    margin: 100px 150px;
-    font-size: 20px;
-    line-height: 30px;
-}
-.exp b { font-size: 30px; }
-
-/*세번째 사진*/
-.fixed03{
-    width: 100%; height: 450px;
-    /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-    background-image: url(../images/photo-3.jpg);
-    background-repeat: no-repeat; /* 배경이미지X */
-    background-size: cover; /* 요소를 비율에 맞게 커버 */
-    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
-    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
-}
-
-/*세번째 콘텐츠*/
-.contents03 {
-    width: 100%;
-    height: 600px; 
-    background-color: orange; 
-    position: relative;
 }
 
 
