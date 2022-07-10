@@ -213,11 +213,42 @@ nav {
 .contents01-1 {
     width: 100%;
     height: 600px;
-    background-color: #004;
+    background-color: rgb(234, 244, 246);;
     position: relative;
     font-family: 'Gothic A1', sans-serif;
 }
+.performance {
+    position: absolute;
+    width: 100%;
+    margin: 90px auto;
+    color: rgb(0, 48, 91);
+}
 
+.main {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+}
+.name {
+    color: rgb(0, 29, 54);
+    font-weight: bold;
+}
+.libya {
+    float: left;
+    width: 30%;
+    margin-left: 50px;
+}
+.airport {
+    float: left;
+    width: 30%;
+}
+.station {
+    float: left;
+    width: 30%;
+}
+.photo01 > img {
+    width: 300px;
+    height: 300px;
+}
 
 /*두번째 사진*/
 .fixed02{
@@ -238,7 +269,7 @@ nav {
     background-color: orange; 
     position: relative;
 }
-.photo {
+.photo02 {
     position: absolute;
     float: left;
     width: 400px;
